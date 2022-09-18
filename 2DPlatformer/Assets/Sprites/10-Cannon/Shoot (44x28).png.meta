@@ -1,7 +1,25 @@
 fileFormatVersion: 2
 guid: 7634b355ddb1e8a4d8af8ee6f88db28d
 TextureImporter:
-  internalIDToNameTable: []
+  internalIDToNameTable:
+  - first:
+      213: 5327387930782927702
+    second: Shoot (44x28)_0
+  - first:
+      213: -1178982728702096205
+    second: Shoot (44x28)_1
+  - first:
+      213: 6160380614089784527
+    second: Shoot (44x28)_2
+  - first:
+      213: -1011549835531733501
+    second: Shoot (44x28)_3
+  - first:
+      213: -8429310584287139013
+    second: Shoot (44x28)_4
+  - first:
+      213: -23400841935912420
+    second: Shoot (44x28)_5
   externalObjects: {}
   serializedVersion: 11
   mipmaps:
@@ -40,7 +58,7 @@ TextureImporter:
   nPOTScale: 0
   lightmap: 0
   compressionQuality: 50
-  spriteMode: 1
+  spriteMode: 2
   spriteExtrude: 1
   spriteMeshType: 0
   alignment: 0
@@ -97,7 +115,91 @@ TextureImporter:
     forceMaximumCompressionQuality_BC6H_BC7: 0
   spriteSheet:
     serializedVersion: 2
-    sprites: []
+    sprites:
+    - serializedVersion: 2
+      name: Shoot (44x28)_0
+      rect:
+        serializedVersion: 2
+        x: 19
+        y: 3
+        width: 21
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: 65b050be81faee940800000000000000
+      internalID: 5327387930782927702
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot (44x28)_2
+      rect:
+        serializedVersion: 2
+        x: 46
+        y: 4
+        width: 42
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: fcc360887811e7550800000000000000
+      internalID: 6160380614089784527
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot (44x28)_4
+      rect:
+        serializedVersion: 2
+        x: 89
+        y: 3
+        width: 41
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: b3bef1a1fa2150b80800000000000000
+      internalID: -8429310584287139013
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
+    - serializedVersion: 2
+      name: Shoot (44x28)_5
+      rect:
+        serializedVersion: 2
+        x: 133
+        y: 3
+        width: 40
+        height: 19
+      alignment: 0
+      pivot: {x: 0, y: 0}
+      border: {x: 0, y: 0, z: 0, w: 0}
+      outline: []
+      physicsShape: []
+      tessellationDetail: 0
+      bones: []
+      spriteID: c1207f8ee0ddcaff0800000000000000
+      internalID: -23400841935912420
+      vertices: []
+      indices: 
+      edges: []
+      weights: []
     outline: []
     physicsShape: []
     bones: []

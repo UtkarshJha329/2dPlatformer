@@ -58,6 +58,8 @@ public class EnemyController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        spriteRenderer.size = new Vector2(1, 1);
+
         if(health <= 0)
         {
             isDead = true;
@@ -146,7 +148,12 @@ public class EnemyController : MonoBehaviour
 
             if (!pauseMovement && !attacking)
             {
+                animator.SetFloat("speed", Mathf.Abs(velocity.magnitude));
                 transform.position += velocity * Time.deltaTime;
+            }
+            else
+            {
+                animator.SetFloat("speed", 0);
             }
 
 
