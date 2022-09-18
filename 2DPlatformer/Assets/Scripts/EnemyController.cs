@@ -40,6 +40,8 @@ public class EnemyController : MonoBehaviour
     public int health = 2;
     public bool isDead = false;
 
+    private bool pauseMovement = false;
+
     private Animator animator;
     private SpriteRenderer spriteRenderer;
 
@@ -107,20 +109,27 @@ public class EnemyController : MonoBehaviour
                     if (hitInfo.collider.CompareTag("Player"))
                     {
                         MovementController playerMovementController = hitInfo.collider.GetComponent<MovementController>();
-                        if (!playerMovementController.invincible)
+                        if (!playerMovementController.isDead && !playerMovementController.invincible)
                         {
                             playerMovementController.wasHit = true;
                             attacking = true;
-                            Debug.Log("Attacked Player");
+                            //Debug.Log("Attacked Player");
                         }
+
+                        pauseMovement = true;
                     }
                     else
                     {
-                        Debug.Log("Hit obstacle");
+                        pauseMovement = false;
+                        //Debug.Log("Hit obstacle");
                         currentWayPointIndex = (currentWayPointIndex == 0) ? 1 : 0;
                     }
 
                     break;
+                }
+                else
+                {
+                    pauseMovement = false;
                 }
             }
 
@@ -128,7 +137,6 @@ public class EnemyController : MonoBehaviour
             if (directionOfMovement.sqrMagnitude < 0.1f)
             {
                 currentWayPointIndex = (currentWayPointIndex == 0) ? 1 : 0;
-                //directionOfMovement = (wayPoints[currentWayPointIndex].position - transform.position);
             }
 
             directionOfMovement = directionOfMovement.normalized;
@@ -136,7 +144,10 @@ public class EnemyController : MonoBehaviour
 
             spriteRenderer.flipX = (velocity.x > 0.0f);
 
-            transform.position += velocity * Time.deltaTime;
+            if (!pauseMovement && !attacking)
+            {
+                transform.position += velocity * Time.deltaTime;
+            }
 
 
             if (wasHit)
@@ -168,16 +179,21 @@ public class EnemyController : MonoBehaviour
                 animator.SetBool("isInvincible", false);
             }
 
-            if(attacking && remainingAttackingTime > 0.0f)
-            {
-                remainingAttackingTime -= Time.deltaTime;
-                animator.SetBool("attacking", true);
-            }
-            else if(attacking && remainingAttackingTime <= 0.0f)
+            
+            if(attacking && remainingAttackingTime <= 0.0f)
             {
                 attacking = false;
                 animator.SetBool("attacking", false);
                 remainingAttackingTime = attackingTime;
+            }
+            else if (attacking && remainingAttackingTime > 0.0f)
+            {
+                remainingAttackingTime -= Time.deltaTime;
+                Debug.Log(animator.GetBool("attacking"));
+                if (!animator.GetBool("attacking"))
+                {
+                    animator.SetBool("attacking", true);
+                }
             }
 
         }
