@@ -41,7 +41,7 @@ public class CannonBallController : MonoBehaviour
             {
                 playerMovementController.wasHit = true;
                 dieInSecs = 0.0f;
-                Debug.Log("hit player");
+                //Debug.Log("hit player");
             }
         }
     }

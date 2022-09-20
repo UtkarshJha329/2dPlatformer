@@ -66,6 +66,7 @@ public class MovementController : MonoBehaviour
 
         attackTimeRemaining = attackingAnimTime;
         remainingInvincibleTime = invinciblityTime;
+        remainingHitTime = hitTime;
     }
 
     // Update is called once per frame
@@ -140,7 +141,7 @@ public class MovementController : MonoBehaviour
             {
                 remainingHitTime -= Time.deltaTime;
                 rb2d.velocity = Vector3.zero;
-
+                //Debug.Log("Handeling hit.");
                 if (!invincible)
                 {
                     health--;
@@ -151,6 +152,7 @@ public class MovementController : MonoBehaviour
             }
             else if (wasHit && remainingHitTime <= 0.0f)
             {
+                //Debug.Log("Handeled hit.");
                 wasHit = false;
                 remainingHitTime = hitTime;
                 animator.SetBool("wasHit", false);
@@ -215,7 +217,7 @@ public class MovementController : MonoBehaviour
 
             if(hitInfo.collider != null)
             {
-                Debug.Log(hitInfo.collider.gameObject.name);
+                //Debug.Log(hitInfo.collider.gameObject.name);
                 if (hitInfo.collider.CompareTag("Enemy"))
                 {
                     EnemyController enemyController = hitInfo.collider.GetComponent<EnemyController>();

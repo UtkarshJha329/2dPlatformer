@@ -85,7 +85,7 @@ public class EnemyController : MonoBehaviour
                     }
                     else
                     {
-                        Debug.Log(hitInfo.collider.gameObject.name);
+                        //Debug.Log(hitInfo.collider.gameObject.name);
                     }
                 }
             }
@@ -196,7 +196,7 @@ public class EnemyController : MonoBehaviour
             else if (attacking && remainingAttackingTime > 0.0f)
             {
                 remainingAttackingTime -= Time.deltaTime;
-                Debug.Log(animator.GetBool("attacking"));
+                //Debug.Log(animator.GetBool("attacking"));
                 if (!animator.GetBool("attacking"))
                 {
                     animator.SetBool("attacking", true);
